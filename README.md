@@ -1,19 +1,27 @@
-# Static Website Hosting on EC2 with S3 Backup
+# Static Website on EC2 with S3 Backup
 
-## Overview
-This project demonstrates hosting a static website on an Amazon EC2 instance with daily backups of website content to an S3 bucket.
+This project hosts a simple static website on an AWS EC2 instance using Apache. A cron job is configured to automatically back up the website content to an S3 bucket using a shell script.
 
-## Components
-- EC2 instance running Apache Web Server
-- Static HTML website hosted in `/var/www/html`
-- Cron job that backs up site content to an S3 bucket daily
+## 🛠️ Tools & Technologies
+- AWS EC2 (Amazon Linux / Ubuntu)
+- Apache Web Server
+- AWS S3
+- Bash Script
+- Cron
 
-## Files
-- `index.html` – Sample static website content
-- `ec2-user-data.sh` – Script to bootstrap EC2 with Apache and deploy the site
-- `s3-backup-cron.sh` – Script for cron job to backup site files to S3
+## 📌 Features
+- Hosts a static website on EC2.
+- Automatically syncs website files to S3 every 24 hours.
+- Backup uses AWS CLI.
 
-## Usage
-1. Launch EC2 with the `ec2-user-data.sh` as user data.
-2. Place your website files under `/var/www/html`.
-3. Schedule `s3-backup-cron.sh` as a cron job for daily backup to S3.
+
+## 🚀 How to Run
+1. Install Apache and host `index.html` on EC2.
+2. Create S3 bucket and configure AWS CLI.
+3. Run `sync-to-s3.sh` manually or use crontab to automate.
+4. Use `crontab.txt` to schedule backup.
+
+
+## 👤 Author
+Anil Kumar — [GitHub Profile](https://github.com/AnilAttada)
+
